@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun jogando(posicao: Int, selecionado: Button){
+
         if (vez == 1){
             selecionado.text = "X"
             selecionado.setBackgroundResource(R.color.jogador01)
@@ -31,12 +33,14 @@ class MainActivity : AppCompatActivity() {
             jogador02.add(posicao)
             vez = 1
         }
+
         selecionado.isClickable = false
 
         verificarGanhador()
 
     }
     fun posicaoBotao (clicado: View) = when(clicado.id){
+
         R.id.btn01 -> jogando(1, clicado as Button)
         R.id.btn02 -> jogando(2, clicado as Button)
         R.id.btn03 -> jogando(3, clicado as Button)
@@ -46,37 +50,70 @@ class MainActivity : AppCompatActivity() {
         R.id.btn07 -> jogando(7, clicado as Button)
         R.id.btn08 -> jogando(8, clicado as Button)
         R.id.btn09 -> jogando(9, clicado as Button)
+
         else -> jogando(0, clicado as Button)
     }
 
     fun verificarGanhador(){
-        val linha01 = listOf(1,2,3)
-        val linha02 = listOf(4,5,6)
-        val linha03 = listOf(7,8,9)
-        val coluna01 = listOf(1,4,7)
-        val coluna02 = listOf(2,5,8)
-        val coluna03 = listOf(3,6,9)
+
+        val linha01   = listOf(1,2,3)
+        val linha02   = listOf(4,5,6)
+        val linha03   = listOf(7,8,9)
+        val coluna01  = listOf(1,4,7)
+        val coluna02  = listOf(2,5,8)
+        val coluna03  = listOf(3,6,9)
         val diagona01 = listOf(1,5,9)
         val diagona02 = listOf(3,5,7)
 
-        if (jogador01.containsAll(linha01) || jogador01.containsAll(linha02) || jogador01.containsAll(linha03) ||
+        if (jogador01.containsAll(linha01)  || jogador01.containsAll(linha02)  || jogador01.containsAll(linha03) ||
             jogador01.containsAll(coluna01) || jogador01.containsAll(coluna02) || jogador01.containsAll(coluna03) ||
-            jogador01.containsAll(diagona01) || jogador01.containsAll(diagona02)){
+            jogador01.containsAll(diagona01)|| jogador01.containsAll(diagona02)){
 
             ganhador = 1
+
+            desabilitarBotoes()
 
             Toast.makeText(applicationContext, "Jogador 01 venceu!", Toast.LENGTH_LONG).show()
         }
 
-        if (jogador02.containsAll(linha01) || jogador02.containsAll(linha02) || jogador02.containsAll(linha03) ||
+        if (jogador02.containsAll(linha01)  || jogador02.containsAll(linha02)  || jogador02.containsAll(linha03) ||
             jogador02.containsAll(coluna01) || jogador02.containsAll(coluna02) || jogador02.containsAll(coluna03) ||
-            jogador02.containsAll(diagona01) || jogador02.containsAll(diagona02)){
+            jogador02.containsAll(diagona01)|| jogador02.containsAll(diagona02)){
 
-            ganhador = 1
+            ganhador = 2
+
+            desabilitarBotoes()
 
             Toast.makeText(applicationContext, "Jogador 02 venceu!", Toast.LENGTH_LONG).show()
         }
 
+    }
+
+    fun desabilitarBotoes(){
+
+        if(ganhador == 1){
+            btn01.isClickable = false
+            btn02.isClickable = false
+            btn03.isClickable = false
+            btn04.isClickable = false
+            btn05.isClickable = false
+            btn06.isClickable = false
+            btn07.isClickable = false
+            btn08.isClickable = false
+            btn09.isClickable = false
+        }
+
+        if(ganhador == 2){
+            btn01.isClickable = false
+            btn02.isClickable = false
+            btn03.isClickable = false
+            btn04.isClickable = false
+            btn05.isClickable = false
+            btn06.isClickable = false
+            btn07.isClickable = false
+            btn08.isClickable = false
+            btn09.isClickable = false
+        }
     }
 
     fun reiniciarJogo(view: View){
