@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFFFF0">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+            <Button
+                android:id="@+id/btn02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+            <Button
+                android:id="@+id/btn03"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn04"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+            <Button
+                android:id="@+id/btn05"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+            <Button
+                android:id="@+id/btn06"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn07"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+            <Button
+                android:id="@+id/btn08"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+            <Button
+                android:id="@+id/btn09"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/botoes"
+                style="@style/btn_velha"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/reiniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:text="Jogar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        android:onClick="reiniciarJogo"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
